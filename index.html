@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verbos Irregulares · Spanish Irregular Verbs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f2e8; --card:#fffdf8; --ink:#1c2333; --muted:#6b7183; --line:#e4dccb;
+  --coral:#e2532f; --coral-soft:#fde6dd; --teal:#16776a; --teal-soft:#dcf1ec;
+  --gold:#f0b429; --gold-soft:#fdf2cf; --violet:#5b4bc4; --violet-soft:#e8e4fb;
+  --radius:18px; --shadow:0 1px 2px rgba(28,35,51,.06),0 8px 24px rgba(28,35,51,.06);
+  --display:"Fraunces",Georgia,serif;
+  --body:"DM Sans","Pretendard","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+button{font-family:inherit;font-size:inherit;color:inherit;cursor:pointer}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0}
+p{margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(247,242,232,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:14px;padding:12px 0}
+.brand{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.01em;white-space:nowrap;background:none;border:0;padding:0}
+.brand i{font-style:normal;color:var(--coral)}
+nav{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{border:0;background:none;padding:8px 13px;border-radius:999px;font-weight:500;color:var(--muted);white-space:nowrap;font-size:15px}
+nav button:hover{background:#ece5d5;color:var(--ink)}
+nav button.on{background:var(--ink);color:#fff}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card);flex-shrink:0}
+.lang button{border:0;background:none;padding:6px 12px;font-size:13px;font-weight:700;color:var(--muted)}
+.lang button.on{background:var(--coral);color:#fff}
+
+/* sections */
+main{padding:36px 0 80px}
+section{display:none;animation:in .35s ease}
+section.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--coral)}
+.title{font-size:clamp(34px,6vw,54px);font-weight:700;letter-spacing:-.02em;margin:6px 0 12px}
+.lead{font-size:19px;color:#424960;max-width:680px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);margin-top:22px}
+.card h3{font-size:23px;margin-bottom:10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:780px){.grid2{grid-template-columns:1fr}.card{padding:20px}}
+.tag{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:700}
+.t-coral{background:var(--coral-soft);color:var(--coral)}
+.t-teal{background:var(--teal-soft);color:var(--teal)}
+.t-violet{background:var(--violet-soft);color:var(--violet)}
+.t-gold{background:var(--gold-soft);color:#946a00}
+.es{font-weight:700}
+mark{background:var(--gold);color:var(--ink);border-radius:5px;padding:0 3px}
+.tip{background:var(--gold-soft);border-left:4px solid var(--gold);border-radius:10px;padding:12px 16px;margin-top:16px;font-size:16px}
+
+/* home */
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+@media(max-width:780px){.hero{grid-template-columns:1fr}}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:28px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-align:left;box-shadow:var(--shadow);transition:transform .15s,border-color .15s}
+.step:hover{transform:translateY(-3px);border-color:var(--ink)}
+.step .n{font-family:var(--display);font-size:15px;color:var(--muted)}
+.step .h{font-family:var(--display);font-size:24px;font-weight:700;margin:2px 0 6px}
+.step p{font-size:15px;color:var(--muted)}
+.cta{display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:#fff;border:0;border-radius:999px;padding:13px 24px;font-weight:700;margin-top:22px;box-shadow:0 6px 16px rgba(226,83,47,.3)}
+.cta:hover{filter:brightness(1.06)}
+.ghost{background:none;border:1.5px solid var(--ink);color:var(--ink);box-shadow:none}
+
+/* boot table */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 15px;font-weight:700}
+.chip small{font-weight:400;color:var(--muted);margin-left:6px}
+.chip:hover{border-color:var(--ink)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip.on small{color:#c9cdd8}
+.boot{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+.cell{border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:10px 14px;text-align:left;display:flex;flex-direction:column;min-height:74px;transition:transform .12s}
+.cell:hover{transform:scale(1.02)}
+.cell .p{font-size:13px;color:var(--muted)}
+.cell .f{font-size:25px;font-weight:700;letter-spacing:-.01em}
+.cell.in{background:var(--coral-soft);border-color:var(--coral)}
+.cell.dim{opacity:.5}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--muted);margin-top:12px}
+.dot{display:inline-block;width:12px;height:12px;border-radius:4px;vertical-align:-1px;margin-right:5px}
+.vhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.vhead b{font-family:var(--display);font-size:32px}
+.spk{border:0;background:var(--teal-soft);color:var(--teal);border-radius:999px;width:34px;height:34px;font-size:16px;flex-shrink:0}
+.spk:hover{background:var(--teal);color:#fff}
+
+/* tables */
+table{width:100%;border-collapse:collapse;margin-top:10px}
+th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+.red{color:var(--coral);font-weight:700}
+.ex{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px dashed var(--line)}
+.ex:last-child{border:0}
+.ex div{flex:1}
+.ex small{display:block;color:var(--muted);font-size:15px}
+.v1{background:var(--gold-soft);border-radius:5px;padding:0 4px}
+.cn{background:#d5ecff;border-radius:5px;padding:0 4px;color:#145a9c}
+.v2{background:var(--teal-soft);border-radius:5px;padding:0 4px;color:var(--teal)}
+
+/* builder */
+.out{background:var(--ink);color:#fff;border-radius:16px;padding:22px;margin-top:14px;display:flex;align-items:center;gap:14px}
+.out .s{font-family:var(--display);font-size:clamp(24px,4vw,34px);font-weight:700}
+.out .s em{font-style:normal;color:var(--gold)}
+.out small{display:block;color:#b9bfcf;font-size:16px;margin-top:2px}
+.out .spk{background:rgba(255,255,255,.14);color:#fff}
+.lbl{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:14px}
+
+/* practice */
+.modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:22px}
+.mode{border:1.5px solid var(--line);background:var(--card);border-radius:14px;padding:14px;text-align:left}
+.mode b{display:block;font-size:17px}
+.mode span{font-size:14px;color:var(--muted)}
+.mode.on{border-color:var(--coral);background:var(--coral-soft)}
+.stats{display:flex;gap:18px;font-size:15px;color:var(--muted);flex-wrap:wrap}
+.stats b{color:var(--ink);font-size:19px}
+.q{font-family:var(--display);font-size:clamp(26px,4.5vw,38px);font-weight:700;margin:16px 0 4px}
+.q .blank{display:inline-block;min-width:90px;border-bottom:3px solid var(--coral);text-align:center;color:var(--coral)}
+.hint{color:var(--muted)}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:18px}
+.opt{border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:14px;font-size:20px;font-weight:700}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt.ok{background:var(--teal-soft);border-color:var(--teal);color:var(--teal)}
+.opt.no{background:var(--coral-soft);border-color:var(--coral);color:var(--coral)}
+.typed{display:flex;gap:10px;margin-top:18px}
+.typed input{flex:1;min-width:0;font:inherit;font-size:22px;font-weight:700;padding:12px 16px;border:1.5px solid var(--line);border-radius:14px;background:#fff;color:var(--ink)}
+.typed input:focus{outline:3px solid var(--gold);border-color:var(--ink)}
+.btn{border:0;background:var(--ink);color:#fff;border-radius:14px;padding:12px 22px;font-weight:700}
+.fb{margin-top:16px;border-radius:14px;padding:14px 16px;display:none}
+.fb.ok{display:block;background:var(--teal-soft);color:#0e5449}
+.fb.no{display:block;background:var(--coral-soft);color:#8f2c12}
+.fb b{font-size:19px}
+.next{margin-top:14px;display:none}
+.meter{height:8px;border-radius:99px;background:#ebe4d3;overflow:hidden;margin-top:10px}
+.meter i{display:block;height:100%;background:var(--teal);width:0;transition:width .3s}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:14px;text-align:center}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+  <button class="brand" data-go="home">Verbos <i>Irregulares</i></button>
+  <nav id="nav">
+    <button data-go="home" data-ko="홈">Home</button>
+    <button data-go="eie">e → ie</button>
+    <button data-go="oue">o → ue</button>
+    <button data-go="ir">Ir</button>
+    <button data-go="inf" data-ko="동사 + 부정사">Verb + Infinitive</button>
+    <button data-go="practice" data-ko="연습">Practice</button>
+  </nav>
+  <div class="lang"><button data-lang="en" class="on">EN</button><button data-lang="ko">한국어</button></div>
+</div></header>
+
+<main class="wrap">
+
+<!-- HOME -->
+<section id="home" class="on">
+  <div class="hero">
+    <div>
+      <div class="eyebrow" data-ko="스페인어 · 현재 시제">Spanish · Present Tense</div>
+      <h1 class="title" data-ko="불규칙 동사,<br>한 번에 정리하기">Irregular verbs,<br>made simple.</h1>
+      <p class="lead" data-ko="어간이 바뀌는 동사(e→ie, o→ue), 동사 ir, 그리고 동사 + 부정사 표현까지. 표를 눌러 발음을 듣고, 바로 연습 문제로 확인하세요.">Stem-changing verbs (e→ie, o→ue), the verb <b>ir</b>, and verb + infinitive expressions. Tap any form to hear it, then test yourself right away.</p>
+      <button class="cta" data-go="eie" data-ko="공부 시작하기 →">Start studying →</button>
+      <button class="cta ghost" data-go="practice" data-ko="바로 연습하기">Jump to practice</button>
+    </div>
+    <div class="card" style="margin:0">
+      <span class="tag t-coral" data-ko="핵심 규칙">The big idea</span>
+      <h3 style="margin-top:10px" data-ko="“장화(Boot) 동사”">“Boot verbs”</h3>
+      <div class="boot" id="homeBoot"></div>
+      <p class="legend"><span><i class="dot" style="background:var(--coral)"></i><span data-ko="장화 안 = 어간이 바뀜">Inside the boot = stem changes</span></span><span><i class="dot" style="background:#fff;border:1.5px solid var(--line)"></i><span data-ko="nosotros · vosotros = 그대로">nosotros · vosotros = no change</span></span></p>
+    </div>
+  </div>
+  <div class="steps">
+    <button class="step" data-go="eie"><div class="n">01</div><div class="h">e → ie</div><p data-ko="empezar, pensar, querer, perder, preferir">empezar, pensar, querer, perder, preferir</p></button>
+    <button class="step" data-go="oue"><div class="n">02</div><div class="h">o → ue</div><p data-ko="poder, volver, devolver, dormir, jugar*">poder, volver, devolver, dormir, jugar*</p></button>
+    <button class="step" data-go="ir"><div class="n">03</div><div class="h">Ir</div><p data-ko="가다 · 장소(al / a la) · 가까운 미래">to go · places (al / a la) · near future</p></button>
+    <button class="step" data-go="inf"><div class="n">04</div><div class="h" data-ko="동사 + 부정사">Verb + Infinitive</div><p data-ko="전치사가 필요한 동사 vs 필요 없는 동사">Which verbs need a preposition?</p></button>
+    <button class="step" data-go="practice"><div class="n">05</div><div class="h" data-ko="연습">Practice</div><p data-ko="4가지 유형의 문제로 시험 대비">Four quiz types to get exam-ready</p></button>
+  </div>
+</section>
+
+<!-- E-IE -->
+<section id="eie">
+  <div class="eyebrow" data-ko="어간 변화 동사">Stem-Changing Verbs</div>
+  <h1 class="title">e → ie</h1>
+  <p class="lead" data-ko="이 동사들은 어미만 바꾸는 것이 아니라, 어간의 <b>e</b>도 <b>ie</b>로 바뀝니다. 단, <b>nosotros</b>(와 vosotros) 형태에서는 바뀌지 않습니다.">When you conjugate these verbs you change the ending <i>and</i> the <b>e</b> in the stem becomes <b>ie</b> — in every form except <b>nosotros</b> (and vosotros).</p>
+  <div class="card"><div id="exEie"></div></div>
+  <div class="tip" data-ko="💡 <b>기억법:</b> 바뀌는 형태(yo, tú, él/ella, ellos/ellas)를 선으로 이으면 장화 모양이 됩니다. nosotros는 장화 밖에 있어요!">💡 <b>Remember:</b> draw a line around the forms that change (yo, tú, él/ella, ellos/ellas) and you get a boot. Nosotros stays outside the boot!</div>
+  <button class="cta" data-go="oue" data-ko="다음: o → ue →">Next: o → ue →</button>
+</section>
+
+<!-- O-UE -->
+<section id="oue">
+  <div class="eyebrow" data-ko="어간 변화 동사">Stem-Changing Verbs</div>
+  <h1 class="title">o → ue</h1>
+  <p class="lead" data-ko="같은 장화 규칙입니다. 어간의 <b>o</b>가 <b>ue</b>로 바뀌고, nosotros와 vosotros는 그대로입니다.">Same boot pattern. The <b>o</b> in the stem becomes <b>ue</b>; nosotros and vosotros keep the original stem.</p>
+  <div class="card"><div id="exOue"></div></div>
+  <div class="tip" data-ko="⭐ <b>jugar</b>는 스페인어에서 유일한 <b>u → ue</b> 동사입니다. o → ue 동사와 똑같이 변화합니다: jugar → j<mark>ue</mark>go.">⭐ <b>jugar</b> is the only <b>u → ue</b> verb in Spanish. It behaves just like the o → ue verbs: jugar → j<mark>ue</mark>go.</div>
+  <button class="cta" data-go="ir" data-ko="다음: Ir →">Next: Ir →</button>
+</section>
+
+<!-- IR -->
+<section id="ir">
+  <div class="eyebrow">El verbo ir</div>
+  <h1 class="title" data-ko="Ir = 가다">Ir = to go</h1>
+  <p class="lead" data-ko="ir는 완전 불규칙 동사입니다. 규칙이 없으니 여섯 형태를 통째로 외우세요.">Ir is completely irregular — no pattern to follow, so learn the six forms by heart.</p>
+  <div class="grid2">
+    <div class="card"><h3 data-ko="현재 시제">Present tense</h3><div class="boot" id="irTable"></div>
+      <p class="legend" data-ko="vosotros(vais)는 스페인에서만 쓰며 수업에서는 다루지 않습니다.">vosotros (vais) is used only in Spain and isn't covered in class.</p></div>
+    <div class="card"><h3 data-ko="Ir + 장소">Ir with places</h3>
+      <p data-ko="어디로 가는지 말할 때 <span class='red'>a</span>는 ‘~로/~에’를 뜻합니다.">The word <span class="red">a</span> means <b>to</b> when we say where someone is going.</p>
+      <table>
+        <tr><th data-ko="장소가…">If the place is…</th><th data-ko="사용">Use</th><th data-ko="예문">Example</th></tr>
+        <tr><td data-ko="여성 명사 (la)">Feminine (la)</td><td><span class="red">a la</span><br><small data-ko="따로 씀">stays separate</small></td><td><span class="es">Voy a la escuela.</span><br><small data-ko="나는 학교에 가요.">I go to school.</small></td></tr>
+        <tr><td data-ko="남성 명사 (el)">Masculine (el)</td><td><span class="red">al</span><br><small>a + el = al</small></td><td><span class="es">Voy al banco.</span><br><small data-ko="나는 은행에 가요.">I go to the bank.</small></td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag t-violet" data-ko="가까운 미래">The near future</span>
+    <h3 style="margin-top:10px">Ir + a + infinitivo</h3>
+    <p data-ko="‘~할 것이다’라고 말하는 방법: <b>ir</b>(변화형) + <span class='red'>a</span> + <b>동사 원형</b>. 아래에서 직접 문장을 만들어 보세요.">How to say “I'm going to…”: conjugated <b>ir</b> + <span class="red">a</span> + <b>infinitive</b> (base form). Build a sentence below.</p>
+    <div class="lbl" data-ko="주어">Subject</div><div class="chips" id="bSubj"></div>
+    <div class="lbl" data-ko="동사 원형">Infinitive</div><div class="chips" id="bInf"></div>
+    <div class="out"><button class="spk" id="bSpk" aria-label="Listen">🔊</button><div><div class="s" id="bOut"></div><small id="bTr"></small></div></div>
+  </div>
+  <button class="cta" data-go="inf" data-ko="다음: 동사 + 부정사 →">Next: Verb + Infinitive →</button>
+</section>
+
+<!-- INF -->
+<section id="inf">
+  <div class="eyebrow">Expresiones con el infinitivo</div>
+  <h1 class="title" data-ko="동사 두 개가 만나면,<br>첫 번째만 변화합니다">When two verbs go walking,<br>the first one does the talking.</h1>
+  <p class="lead" data-ko="동사 두 개가 연달아 올 때는 <span class='v1'>첫 번째 동사만 변화</span>시키고, 두 번째는 <span class='v2'>원형(부정사)</span> 그대로 둡니다. 어떤 동사는 사이에 <span class='cn'>전치사</span>가 필요합니다.">Only the <span class="v1">first verb is conjugated</span>; the second stays in the <span class="v2">infinitive</span>. Some verbs need a <span class="cn">connector</span> between the two.</p>
+  <div class="grid2">
+    <div class="card"><span class="tag t-teal" data-ko="전치사 없음">No preposition</span>
+      <h3 style="margin-top:10px" data-ko="바로 원형이 옴">Followed directly</h3>
+      <div id="exDirect"></div></div>
+    <div class="card"><span class="tag t-coral" data-ko="전치사 필요">Preposition needed</span>
+      <h3 style="margin-top:10px" data-ko="사이에 연결어가 필요">Connector in between</h3>
+      <div id="exPrep"></div></div>
+  </div>
+  <div class="card"><h3 data-ko="한눈에 보는 표">Cheat sheet</h3>
+    <table>
+      <tr><th data-ko="전치사 필요">Preposition</th><th data-ko="뜻">Meaning</th><th data-ko="전치사 없음">No preposition</th><th data-ko="뜻">Meaning</th></tr>
+      <tr><td>empezar <span class="red">a</span> + inf.</td><td data-ko="~하기 시작하다">to start to…</td><td>pensar + inf.</td><td data-ko="~할 계획이다">to plan to…</td></tr>
+      <tr><td>ir <span class="red">a</span> + inf.</td><td data-ko="~할 것이다">to be going to…</td><td>querer + inf.</td><td data-ko="~하고 싶다">to want to…</td></tr>
+      <tr><td>tener <span class="red">que</span> + inf.</td><td data-ko="~해야 한다">to have to…</td><td>preferir + inf.</td><td data-ko="~하는 것을 더 좋아하다">to prefer to…</td></tr>
+      <tr><td>acabar <span class="red">de</span> + inf.</td><td data-ko="방금 ~했다">to have just…</td><td>poder + inf.</td><td data-ko="~할 수 있다">to be able to…</td></tr>
+    </table>
+  </div>
+  <button class="cta" data-go="practice" data-ko="연습하러 가기 →">Go practice →</button>
+</section>
+
+<!-- PRACTICE -->
+<section id="practice">
+  <div class="eyebrow" data-ko="시험 대비">Exam prep</div>
+  <h1 class="title" data-ko="연습">Practice</h1>
+  <p class="lead" data-ko="유형을 고르고 풀어 보세요. 틀린 문제는 바로 설명이 나옵니다.">Pick a quiz type. You get an explanation every time you miss one.</p>
+  <div class="modes" id="modes"></div>
+  <div class="card">
+    <div class="stats"><span><span data-ko="정답">Correct</span> <b id="sOk">0</b></span><span><span data-ko="푼 문제">Answered</span> <b id="sAll">0</b></span><span><span data-ko="연속 정답">Streak</span> <b id="sStreak">0</b> 🔥</span></div>
+    <div class="meter"><i id="meter"></i></div>
+    <div id="quiz"></div>
+    <div class="fb" id="fb"></div>
+    <button class="btn next" id="next" data-ko="다음 문제 →">Next question →</button>
+  </div>
+</section>
+
+</main>
+<footer><div class="wrap" data-ko="스페인어 불규칙 동사 학습 사이트 · 표를 누르면 발음을 들을 수 있습니다">Spanish irregular verbs study site · tap any verb form to hear it</div></footer>
+
+<script>
+(function(){
+"use strict";
+var lang="en";
+try{ if(localStorage.getItem("vi_lang")==="ko") lang="ko"; }catch(e){}
+function t(en,ko){return lang==="ko"?ko:en;}
+function $(s,r){return (r||document).querySelector(s);}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));}
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var x=a[i];a[i]=a[j];a[j]=x;}return a;}
+
+/* ---------- speech ---------- */
+function speak(txt){
+  if(!("speechSynthesis" in window))return;
+  try{
+    speechSynthesis.cancel();
+    var u=new SpeechSynthesisUtterance(txt.replace(/[_]+/g," "));
+    var vs=speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang);});
+    var v=vs.filter(function(v){return /es[-_](ES|MX|US)/i.test(v.lang);})[0]||vs[0];
+    if(v)u.voice=v; u.lang=v?v.lang:"es-ES"; u.rate=.9;
+    speechSynthesis.speak(u);
+  }catch(e){}
+}
+if("speechSynthesis" in window){try{speechSynthesis.getVoices();}catch(e){}}
+
+/* ---------- data ---------- */
+var PERS=["yo","tú","él / ella / usted","nosotros","vosotros","ellos / ellas / ustedes"];
+var PSAY=["yo","tú","él","nosotros","vosotros","ellos"];
+var ORDER=[0,3,1,4,2,5]; // grid order: left column singular, right column plural
+var END={ar:["o","as","a","amos","áis","an"],er:["o","es","e","emos","éis","en"],ir:["o","es","e","imos","ís","en"]};
+var VERBS={
+  empezar:{from:"e",to:"ie",en:"to start / begin",ko:"시작하다"},
+  pensar:{from:"e",to:"ie",en:"to think / plan on",ko:"생각하다 · 계획하다"},
+  querer:{from:"e",to:"ie",en:"to want",ko:"원하다"},
+  perder:{from:"e",to:"ie",en:"to lose",ko:"잃다 · 지다"},
+  preferir:{from:"e",to:"ie",en:"to prefer",ko:"더 좋아하다"},
+  poder:{from:"o",to:"ue",en:"to be able to / can",ko:"~할 수 있다"},
+  volver:{from:"o",to:"ue",en:"to come back",ko:"돌아오다"},
+  devolver:{from:"o",to:"ue",en:"to give back",ko:"돌려주다"},
+  dormir:{from:"o",to:"ue",en:"to sleep",ko:"자다"},
+  jugar:{from:"u",to:"ue",en:"to play",ko:"놀다 · (경기를) 하다"}
+};
+var G_EIE=["empezar","pensar","querer","perder","preferir"];
+var G_OUE=["poder","volver","devolver","dormir","jugar"];
+var IR=["voy","vas","va","vamos","vais","van"];
+var TENER=["tengo","tienes","tiene","tenemos","tenéis","tienen"];
+
+function parts(inf,i){
+  if(inf==="ir")return {pre:IR[i],chg:"",post:"",end:"",boot:false};
+  var v=VERBS[inf],stem=inf.slice(0,-2),e=END[inf.slice(-2)][i];
+  var k=stem.lastIndexOf(v.from),boot=(i!==3&&i!==4);
+  return {pre:stem.slice(0,k),chg:boot?v.to:v.from,post:stem.slice(k+1),end:e,boot:boot};
+}
+function form(inf,i){
+  if(inf==="tener")return TENER[i];
+  if(inf==="acabar")return "acab"+END.ar[i];
+  var p=parts(inf,i);return p.pre+p.chg+p.post+p.end;
+}
+function formHTML(inf,i){
+  var p=parts(inf,i);
+  return p.pre+(p.boot?"<mark>"+p.chg+"</mark>":p.chg)+p.post+p.end;
+}
+
+/* ---------- conjugation explorer ---------- */
+function explorer(el,group,state){
+  var cur=state.v||group[0]; state.v=cur;
+  var v=VERBS[cur];
+  var h='<div class="chips">'+group.map(function(g){
+    return '<button class="chip'+(g===cur?" on":"")+'" data-v="'+g+'">'+g+'<small>'+t(VERBS[g].en,VERBS[g].ko)+'</small></button>';
+  }).join("")+'</div>';
+  h+='<div class="vhead"><button class="spk" data-say="'+cur+'" aria-label="Listen">🔊</button><b>'+cur+'</b><span class="hint">'+t(v.en,v.ko)+'</span><span class="tag t-coral">'+v.from+' → '+v.to+'</span></div>';
+  h+='<div class="boot">'+ORDER.map(function(i){
+    var p=parts(cur,i);
+    return '<button class="cell'+(p.boot?" in":"")+(i===4?" dim":"")+'" data-say="'+PSAY[i]+" "+form(cur,i)+'"><span class="p">'+PERS[i]+'</span><span class="f">'+formHTML(cur,i)+'</span></button>';
+  }).join("")+'</div>';
+  h+='<p class="legend"><span><i class="dot" style="background:var(--coral)"></i>'+t("stem changes ("+v.from+" → "+v.to+")","어간 변화 ("+v.from+" → "+v.to+")")+'</span><span><i class="dot" style="background:#fff;border:1.5px solid var(--line)"></i>'+t("no stem change","어간 변화 없음")+'</span><span>'+t("Tap a form to listen","형태를 누르면 발음이 나옵니다")+'</span></p>';
+  el.innerHTML=h;
+  $$(".chip",el).forEach(function(b){b.onclick=function(){state.v=b.dataset.v;explorer(el,group,state);};});
+}
+var stE={},stO={};
+
+/* ---------- ir builder ---------- */
+var SUBJ=[{es:"Yo",i:0,en:"I'm",ko:"나는"},{es:"Tú",i:1,en:"You're",ko:"너는"},{es:"Él",i:2,en:"He's",ko:"그는"},{es:"Ella",i:2,en:"She's",ko:"그녀는"},{es:"Nosotros",i:3,en:"We're",ko:"우리는"},{es:"Ellos",i:5,en:"They're",ko:"그들은"}];
+var INFS=[{es:"estudiar",en:"study",ko:"공부할"},{es:"viajar",en:"travel",ko:"여행할"},{es:"cocinar",en:"cook",ko:"요리할"},{es:"leer",en:"read",ko:"책을 읽을"},{es:"jugar",en:"play",ko:"놀"},{es:"dormir",en:"sleep",ko:"잘"},{es:"volver",en:"come back",ko:"돌아올"}];
+var bs=0,bi=0;
+function builder(){
+  $("#bSubj").innerHTML=SUBJ.map(function(s,k){return '<button class="chip'+(k===bs?" on":"")+'" data-k="'+k+'">'+s.es+'</button>';}).join("");
+  $("#bInf").innerHTML=INFS.map(function(s,k){return '<button class="chip'+(k===bi?" on":"")+'" data-k="'+k+'">'+s.es+'</button>';}).join("");
+  var s=SUBJ[bs],f=INFS[bi];
+  $("#bOut").innerHTML=s.es+" <em>"+IR[s.i]+" a</em> "+f.es+".";
+  $("#bTr").textContent=t(s.en+" going to "+f.en+".",s.ko+" "+f.ko+" 거예요.");
+  $("#bSpk").dataset.say=s.es+" "+IR[s.i]+" a "+f.es;
+  $$("#bSubj .chip").forEach(function(b){b.onclick=function(){bs=+b.dataset.k;builder();speak($("#bSpk").dataset.say);};});
+  $$("#bInf .chip").forEach(function(b){b.onclick=function(){bi=+b.dataset.k;builder();speak($("#bSpk").dataset.say);};});
+}
+
+/* ---------- infinitive examples ---------- */
+var DIRECT=[["Quiero","","jugar","I want to play.","나는 놀고 싶어요."],["Tú piensas","","volver","You plan to come back.","너는 돌아올 계획이야."],["El equipo puede","","ganar","The team can win.","그 팀은 이길 수 있어요."],["Preferimos","","leer","We prefer to read.","우리는 책 읽는 것을 더 좋아해요."]];
+var PREP=[["Empiezo","a","jugar","I start to play.","나는 놀기 시작해요."],["Acabas","de","volver","You have just come back.","너는 방금 돌아왔어."],["El equipo tiene","que","ganar","The team has to win.","그 팀은 이겨야 해요."],["Vamos","a","leer","We are going to read.","우리는 책을 읽을 거예요."]];
+function exList(a){
+  return a.map(function(x){
+    var say=x[0]+" "+(x[1]?x[1]+" ":"")+x[2];
+    return '<div class="ex"><button class="spk" data-say="'+say+'" aria-label="Listen">🔊</button><div><span class="es"><span class="v1">'+x[0]+'</span> '+(x[1]?'<span class="cn">'+x[1]+'</span> ':'')+'<span class="v2">'+x[2]+'</span>.</span><small>'+t(x[3],x[4])+'</small></div></div>';
+  }).join("");
+}
+
+/* ---------- practice ---------- */
+var QP=[0,1,2,3,5]; // persons used in quizzes (no vosotros)
+var SENT=[
+ ["Yo ___ comer pizza.","querer",0],["Nosotros ___ hablar español.","poder",3],["Ella ___ al parque.","ir",2],
+ ["Tú ___ al fútbol.","jugar",1],["Ellos ___ ocho horas.","dormir",5],["La clase ___ a las nueve.","empezar",2],
+ ["Yo ___ a estudiar esta noche.","ir",0],["Nosotros ___ leer.","preferir",3],["Mi hermano ___ a casa tarde.","volver",2],
+ ["Ustedes ___ viajar a México.","pensar",5],["Tú ___ las llaves.","perder",1],["Yo ___ el libro a la biblioteca.","devolver",0],
+ ["Nosotros ___ al cine.","ir",3],["Mis amigos ___ a la playa.","ir",5],["Nosotras ___ al tenis.","jugar",3],
+ ["Usted ___ un café.","querer",2],["Yo no ___ dormir.","poder",0],["Tú ___ a la escuela.","ir",1]
+];
+var CONN=[
+ ["Empiezo ___ leer.","a","empezar a + inf."],["Tengo ___ estudiar.","que","tener que + inf."],["Acabo ___ comer.","de","acabar de + inf."],
+ ["Quiero ___ dormir.","—","querer + inf."],["Vamos ___ jugar.","a","ir a + inf."],["Puedes ___ volver.","—","poder + inf."],
+ ["Pienso ___ viajar.","—","pensar + inf."],["Prefieren ___ caminar.","—","preferir + inf."],["Ella va ___ cocinar.","a","ir a + inf."],
+ ["Tienes ___ volver.","que","tener que + inf."],["Acabamos ___ llegar.","de","acabar de + inf."],["Empiezan ___ jugar.","a","empezar a + inf."]
+];
+var PLACES=[["banco","m","bank","은행"],["escuela","f","school","학교"],["mercado","m","market","시장"],["biblioteca","f","library","도서관"],["parque","m","park","공원"],["playa","f","beach","해변"],["cine","m","movie theater","영화관"],["tienda","f","store","가게"],["restaurante","m","restaurant","식당"],["piscina","f","pool","수영장"],["museo","m","museum","박물관"],["cafetería","f","cafeteria","카페테리아"]];
+var MODES=[
+ {id:"conj",en:["Conjugate","Type the correct form"],ko:["동사 변화","알맞은 형태를 입력"]},
+ {id:"sent",en:["Sentences","Choose the verb that fits"],ko:["문장 완성","알맞은 동사 고르기"]},
+ {id:"conn",en:["a · de · que · —","Pick the connector"],ko:["a · de · que · —","연결어 고르기"]},
+ {id:"place",en:["al or a la?","Ir with places"],ko:["al / a la","Ir + 장소"]}
+];
+var mode="conj",score={ok:0,all:0,streak:0},cur=null,last="";
+try{var sv=JSON.parse(localStorage.getItem("vi_score")||"null");if(sv&&typeof sv.ok==="number")score=sv;}catch(e){}
+function saveScore(){try{localStorage.setItem("vi_score",JSON.stringify(score));}catch(e){}}
+
+function makeQ(){
+  var q,tries=0;
+  do{
+    if(mode==="conj"){
+      var inf=pick(G_EIE.concat(G_OUE,["ir"])),i=pick(QP);
+      q={key:inf+i,type:"typed",inf:inf,i:i,ans:form(inf,i),say:PSAY[i]+" "+form(inf,i)};
+    }else if(mode==="sent"){
+      var s=pick(SENT),ps=shuffle(QP.filter(function(p){return form(s[1],p)!==form(s[1],s[2]);})).slice(0,3);
+      q={key:s[0],type:"mc",text:s[0],inf:s[1],i:s[2],ans:form(s[1],s[2]),opts:shuffle(ps.map(function(p){return form(s[1],p);}).concat([form(s[1],s[2])])),say:s[0].replace("___",form(s[1],s[2]))};
+    }else if(mode==="conn"){
+      var c=pick(CONN);
+      q={key:c[0],type:"mc",text:c[0],ans:c[1],opts:["a","de","que","—"],rule:c[2],say:c[0].replace("___",c[1]==="—"?"":c[1]).replace(/\s+/g," ")};
+    }else{
+      var p=pick(PLACES),a=p[1]==="m"?"al":"a la";
+      q={key:p[0],type:"mc",text:"Voy ___ "+p[0]+".",ans:a,opts:["al","a la"],place:p,say:"Voy "+a+" "+p[0]};
+    }
+  }while(q.key===last&&++tries<8);
+  last=q.key;return q;
+}
+function renderModes(){
+  $("#modes").innerHTML=MODES.map(function(m){var x=lang==="ko"?m.ko:m.en;return '<button class="mode'+(m.id===mode?" on":"")+'" data-m="'+m.id+'"><b>'+x[0]+'</b><span>'+x[1]+'</span></button>';}).join("");
+  $$("#modes .mode").forEach(function(b){b.onclick=function(){mode=b.dataset.m;renderModes();newQ();};});
+}
+function renderStats(){
+  $("#sOk").textContent=score.ok;$("#sAll").textContent=score.all;$("#sStreak").textContent=score.streak;
+  $("#meter").style.width=(score.all?Math.round(score.ok/score.all*100):0)+"%";
+}
+function newQ(){cur=makeQ();cur.done=false;renderQ();}
+function renderQ(){
+  var q=cur,h="";
+  $("#fb").className="fb";$("#next").style.display="none";
+  if(q.type==="typed"){
+    var m=q.inf==="ir"?t("to go","가다"):t(VERBS[q.inf].en,VERBS[q.inf].ko);
+    h+='<div class="q">'+PERS[q.i]+' + '+q.inf+'</div><p class="hint">'+q.inf+' = '+m+'</p>';
+    h+='<form class="typed" id="tf"><input id="ti" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="'+t("type the form…","형태를 입력하세요…")+'"><button class="btn">'+t("Check","확인")+'</button></form>';
+  }else{
+    var hint="";
+    if(mode==="sent")hint="("+q.inf+")";
+    if(mode==="conn")hint=t("— means no connector is needed","— 는 연결어가 필요 없다는 뜻입니다");
+    if(mode==="place")hint=q.place[0]+" = "+t(q.place[2],q.place[3]);
+    h+='<div class="q">'+q.text.replace("___",'<span class="blank">&nbsp;?&nbsp;</span>')+'</div><p class="hint">'+hint+'</p>';
+    h+='<div class="opts">'+q.opts.map(function(o){return '<button class="opt" data-o="'+o+'">'+o+'</button>';}).join("")+'</div>';
+  }
+  $("#quiz").innerHTML=h;
+  if(q.type==="typed"){
+    $("#tf").onsubmit=function(e){e.preventDefault();if(q.done)return;var v=$("#ti").value.trim().toLowerCase();if(!v)return;$("#ti").disabled=true;grade(v===q.ans);};
+    if(document.activeElement===document.body||$("#practice").classList.contains("on")){try{$("#ti").focus({preventScroll:true});}catch(e){}}
+  }else{
+    $$("#quiz .opt").forEach(function(b){b.onclick=function(){
+      if(q.done)return;
+      $$("#quiz .opt").forEach(function(x){x.disabled=true;if(x.dataset.o===q.ans)x.classList.add("ok");});
+      if(b.dataset.o!==q.ans)b.classList.add("no");
+      grade(b.dataset.o===q.ans);
+    };});
+  }
+}
+function explain(q){
+  if(mode==="conn")return q.rule;
+  if(mode==="place")return q.place[1]==="m"?t("<b>"+q.place[0]+"</b> is masculine (el "+q.place[0]+") → a + el = <b>al</b>","<b>"+q.place[0]+"</b>는 남성 명사 (el "+q.place[0]+") → a + el = <b>al</b>"):t("<b>"+q.place[0]+"</b> is feminine (la "+q.place[0]+") → <b>a la</b> stays separate","<b>"+q.place[0]+"</b>는 여성 명사 (la "+q.place[0]+") → <b>a la</b>는 따로 씁니다");
+  if(q.inf==="ir")return t("ir is fully irregular: voy, vas, va, vamos, van","ir는 완전 불규칙: voy, vas, va, vamos, van");
+  var v=VERBS[q.inf];
+  return (q.i===3)?t("nosotros is outside the boot → no stem change","nosotros는 장화 밖 → 어간이 바뀌지 않습니다"):t("Inside the boot → "+v.from+" changes to "+v.to,"장화 안 → "+v.from+"가 "+v.to+"로 바뀝니다");
+}
+function grade(ok){
+  var q=cur;q.done=true;
+  score.all++;if(ok){score.ok++;score.streak++;}else score.streak=0;
+  saveScore();renderStats();
+  var shown=(q.inf&&mode!=="conn"&&mode!=="place")?formHTML(q.inf,q.i):q.ans;
+  var fb=$("#fb");fb.className="fb "+(ok?"ok":"no");
+  fb.innerHTML=(ok?t("✓ Correct! ","✓ 정답! "):t("✗ Not quite. Answer: ","✗ 아쉬워요. 정답: "))+"<b>"+shown+"</b><br>"+explain(q);
+  speak(q.say);
+  var n=$("#next");n.style.display="inline-block";try{n.focus({preventScroll:true});}catch(e){}
+}
+$("#next").onclick=newQ;
+
+/* ---------- static render + i18n ---------- */
+function renderAll(){
+  document.documentElement.lang=lang;
+  $$("[data-ko]").forEach(function(el){
+    if(el.dataset.en===undefined)el.dataset.en=el.innerHTML;
+    el.innerHTML=lang==="ko"?el.dataset.ko:el.dataset.en;
+  });
+  $$(".lang button").forEach(function(b){b.classList.toggle("on",b.dataset.lang===lang);});
+  $("#homeBoot").innerHTML=ORDER.map(function(i){var p=parts("querer",i);return '<button class="cell'+(p.boot?" in":"")+(i===4?" dim":"")+'" data-say="'+PSAY[i]+" "+form("querer",i)+'"><span class="p">'+PSAY[i]+'</span><span class="f">'+formHTML("querer",i)+'</span></button>';}).join("");
+  explorer($("#exEie"),G_EIE,stE);
+  explorer($("#exOue"),G_OUE,stO);
+  $("#irTable").innerHTML=ORDER.map(function(i){return '<button class="cell'+(i===4?" dim":"")+'" data-say="'+PSAY[i]+" "+IR[i]+'"><span class="p">'+PERS[i]+'</span><span class="f">'+IR[i]+'</span></button>';}).join("");
+  builder();
+  $("#exDirect").innerHTML=exList(DIRECT);
+  $("#exPrep").innerHTML=exList(PREP);
+  renderModes();renderStats();
+  if(cur)renderQ();else newQ();
+}
+$$(".lang button").forEach(function(b){b.onclick=function(){lang=b.dataset.lang;try{localStorage.setItem("vi_lang",lang);}catch(e){}renderAll();};});
+
+/* ---------- navigation ---------- */
+var IDS=["home","eie","oue","ir","inf","practice"];
+function go(id,push){
+  if(IDS.indexOf(id)<0)id="home";
+  $$("section").forEach(function(s){s.classList.toggle("on",s.id===id);});
+  $$("#nav button").forEach(function(b){b.classList.toggle("on",b.dataset.go===id);});
+  if(push){try{history.replaceState(null,"","#"+id);}catch(e){}window.scrollTo(0,0);}
+}
+document.addEventListener("click",function(e){
+  var g=e.target.closest("[data-go]");if(g){go(g.dataset.go,true);return;}
+  var s=e.target.closest("[data-say]");if(s)speak(s.dataset.say);
+});
+window.addEventListener("hashchange",function(){go(location.hash.slice(1),false);});
+
+renderAll();
+go(location.hash.slice(1),false);
+})();
+</script>
+</body>
+</html>
